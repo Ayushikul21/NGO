@@ -8,8 +8,23 @@ export default function Header({ onDonateClick, onDocumentsClick }) {
   const navigate = useNavigate();
 
   const menuItems = [
-    { title: 'ABOUT US', items: ['Our Story', 'Mission & Vision', 'Team', 'Annual Reports', 'Financials'] },
-    { title: 'OUR WORK', items: ['Education', 'Healthcare', 'Livelihood', 'Women Empowerment', 'Impact Stories'] },
+    { title: 'ABOUT US', 
+      items: [
+        {name: 'Our Story', path: '/our-story'}, 
+        {name: 'Mission & Vision', path: '/mission-vision'},
+        {name: 'Team', path: 'team'}, 
+        {name: 'Annual Reports', path: '/annual-reports'}, 
+      ] 
+    },
+    { title: 'OUR WORK',
+      items: [
+        {name: 'Education', path: '/education'},
+        {name: 'Healthcare', path: '/healthcare'},
+        {name: 'Livelihood', path: ''},
+        {name: 'Women Empowerment', path: ''},
+        {name: 'Impact Stories', path: ''}
+      ]
+    },
     { title: 'CAMPAIGNS', items: ['Current Campaigns', 'Past Campaigns', 'Success Stories', 'Join Campaign'] },
     { title: 'GET INVOLVED', items: ['Donate', 'Volunteer', 'Partner With Us', 'Corporate Partnerships', 'Fundraise'] },
     { title: 'MEDIA CENTRE', items: ['Press Releases', 'News', 'Events', 'Gallery', 'Videos'] },

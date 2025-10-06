@@ -7,6 +7,12 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Programs from "./Components/Programs";
 import LearnMorePage from "./Components/LearnMorePage";
+import OurStoryPage from "./Components/OurStoryPage";
+import MissionVisionPage from "./Components/MissionVisionPage";
+import TeamPage from "./Components/TeamPage";
+import AnnualReportsPage from "./Components/AnnualReportsPage";
+import Education from "./Components/Education";
+import HealthcarePage from "./Components/HealthcarePage";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,6 +34,12 @@ function App() {
         <Route path="/get-in-touch" element={<GetInTouch />} />
         <Route path="/programs" element={<Programs/>}/>
         <Route path="/learn-more" element={<LearnMorePage/>} />
+        <Route path="/our-story" element={<OurStoryPage/>} />
+        <Route path="/mission-vision" element={<MissionVisionPage/>} />
+        <Route path="/team" element={<TeamPage/>} />
+        <Route path="/annual-reports" element={<AnnualReportsPage/>} />
+        <Route path="/education" element={<Education/>} />
+        <Route path="/healthcare" element={<HealthcarePage/>} />
       </Routes>
       <Footer onDonateClick={handleDonateClick} />
 

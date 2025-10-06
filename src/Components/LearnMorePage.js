@@ -180,13 +180,13 @@ export default function LearnMorePage() {
           <h2 className="text-4xl font-bold mb-6 text-slate-900">Our Story</h2>
           <div className="prose prose-lg max-w-none text-slate-700 leading-relaxed space-y-6">
             <p>
-              Our organization was born from a simple observation and a profound commitment. In 2022, a group of healthcare professionals and social workers noticed that despite numerous government schemes and initiatives, marginalized communities—particularly women and children—continued to face significant barriers in accessing basic healthcare and education services.
+              Our organization was born from a simple observation and a profound commitment. In 2022, we realized that despite numerous government schemes and initiatives, marginalized communities—particularly women and children—continued to face significant barriers in accessing basic healthcare and education services.
             </p>
             <p>
               What started as weekend health camps in three villages has evolved into a comprehensive development organization working across multiple sectors. Our journey has been one of learning, adaptation, and deep partnership with the communities we serve. We've learned that sustainable change doesn't come from top-down interventions but from empowering communities to drive their own development.
             </p>
             <p>
-              Today, we work in over 200 communities, but our approach remains rooted in the same principles that guided our founders: dignity, participation, and the belief that every individual deserves the opportunity to reach their full potential regardless of their circumstances of birth.
+              Today, we work in over 50 communities, but our approach remains rooted in the same principles that guided our founders: dignity, participation, and the belief that every individual deserves the opportunity to reach their full potential regardless of their circumstances of birth.
             </p>
           </div>
         </div>
