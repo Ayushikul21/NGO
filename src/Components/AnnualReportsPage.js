@@ -585,9 +585,9 @@ TRANSPARENCY MEASURES:
                         <FileText className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-slate-800 mb-1">{report.title}</h3>
+                        <h3 className="text-lg sm:text-xl font-bold text-slate-800 mb-1">{report.title}</h3>
                         <p className="text-slate-600 mb-2">{report.subtitle}</p>
-                        <div className="flex items-center gap-4 text-sm text-slate-500">
+                        <div className="flex flex-wrap items-center gap-2 text-sm text-slate-500">
                           <span>{report.published}</span>
                           <span>•</span>
                           <span>{report.pages} pages</span>

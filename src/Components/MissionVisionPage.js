@@ -335,7 +335,7 @@ export default function MissionVisionPage() {
               <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-4">
                 <Compass className="w-10 h-10 text-white" />
               </div>
-              <h2 className="text-4xl font-bold text-slate-800">Implementation Methodology</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 break-words">Implementation Methodology</h2>
             </div>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
               Our approach is rooted in participatory development principles and proven frameworks for sustainable community transformation. We combine grassroots engagement with systematic program management to ensure both depth and scale of impact.
