@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Heart, Users, Globe, Sparkles, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 export default function OurStoryPage() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [activeImpact, setActiveImpact] = useState(0);
+  const navigate = useNavigate();
+
+  const openMission = () => {
+    navigate('/mission-vision');
+  };
 
   useEffect(() => {
     setIsVisible(true);
@@ -171,7 +177,7 @@ export default function OurStoryPage() {
               <p className="text-lg text-slate-700 leading-relaxed mb-6">
                 Our organization was born from a simple observation and a profound commitment. In 2022, we realized that despite numerous government schemes and initiatives, marginalized communities—particularly women and children—continued to face significant barriers in accessing basic healthcare and education services.
               </p>
-              <div className="inline-block px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transition-shadow cursor-pointer">
+              <div onClick={openMission} className="inline-block px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transition-shadow cursor-pointer">
                 Learn More About Our Mission
               </div>
             </div>
@@ -306,10 +312,10 @@ export default function OurStoryPage() {
                 Today, we work in over 50 communities, but our approach remains rooted in the same principles that guided our founders: dignity, participation, and the belief that every individual deserves the opportunity to reach their full potential regardless of their circumstances of birth.
               </p>
               <div className="flex flex-wrap gap-4 mt-10">
-                <button className="px-8 py-4 bg-white text-blue-900 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 hover:shadow-lg hover:scale-105">
+                <button onClick={()=>navigate('/get-in-touch')} className="px-8 py-4 bg-white text-blue-900 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 hover:shadow-lg hover:scale-105">
                   Join Our Mission
                 </button>
-                <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-xl font-semibold hover:bg-white/20 transition-all duration-300">
+                <button onClick={()=>navigate('/Partner')} className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-xl font-semibold hover:bg-white/20 transition-all duration-300">
                   Partner With Us
                 </button>
               </div>

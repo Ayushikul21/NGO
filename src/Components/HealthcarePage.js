@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
-  Stethoscope,
   HeartPulse,
   Users,
   Baby,
@@ -11,20 +11,17 @@ import {
   Shield,
   ArrowLeft,
   ArrowRight,
-  Ambulance,
   Droplets,
 } from "lucide-react";
 
 export default function HealthcarePage() {
-  const [isVisible, setIsVisible] = useState(false);
   const [current, setCurrent] = useState(0);
-
-  useEffect(() => setIsVisible(true), []);
+  const navigate = useNavigate();
 
   const images = [
     "https://images.unsplash.com/photo-1584515933487-779824d29309",
-    "https://images.unsplash.com/photo-1606206591233-69561e3e3e9b",
-    "https://images.unsplash.com/photo-1603575448362-2f3b9a33e1f1",
+    "/health1.jpg",
+    "/health2.jpg",
     "https://images.unsplash.com/photo-1550831107-1553da8c8464",
   ];
 
@@ -48,22 +45,22 @@ export default function HealthcarePage() {
     {
       title: "Mobile Health Units",
       desc: "Reaching villages where healthcare facilities are absent, our mobile clinics provide regular medical check-ups, diagnostics, and treatment for chronic and seasonal illnesses.",
-      img: "https://images.unsplash.com/photo-1622186478912-f9a3b83b1a5b",
+      img: "/health3.png",
     },
     {
       title: "Maternal & Child Health Care",
       desc: "Focused on reducing maternal and infant mortality rates, our MCH program includes prenatal care, nutrition support, immunization, and postnatal follow-ups.",
-      img: "https://images.unsplash.com/photo-1603575448362-2f3b9a33e1f1",
+      img: "health4.jpg",
     },
     {
       title: "Preventive Health Education",
       desc: "Workshops on hygiene, nutrition, menstrual health, and disease prevention are held for women, youth, and schools to foster long-term health literacy.",
-      img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+      img: "health5.jpg",
     },
     {
       title: "Mental Health & Wellness",
       desc: "We partner with local psychologists to conduct stress management and counseling sessions for adolescents and women, ensuring emotional well-being and resilience.",
-      img: "https://images.unsplash.com/photo-1591123120675-35d2a92e50bb",
+      img: "/health6.jpg",
     },
   ];
 
@@ -72,13 +69,13 @@ export default function HealthcarePage() {
       name: "Meena’s Safe Motherhood Journey",
       quote:
         "Before joining our program, Meena had no access to prenatal care. Today, she volunteers with our maternal health project, helping other mothers receive safe deliveries.",
-      img: "https://images.unsplash.com/photo-1550831107-1553da8c8464",
+      img: "health8.jpg",
     },
     {
       name: "Village Wellness Drive",
       quote:
         "A hygiene awareness and water sanitation campaign in rural clusters helped reduce waterborne diseases by over 45% within six months.",
-      img: "https://images.unsplash.com/photo-1587502536263-47e9c87c7e32",
+      img: "health7.jpg",
     },
   ];
 
@@ -173,7 +170,7 @@ export default function HealthcarePage() {
                 <img
                   src={prog.img}
                   alt={prog.title}
-                  className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-56 object-fill group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-blue-800 mb-3">
@@ -203,7 +200,7 @@ export default function HealthcarePage() {
                 <img
                   src={story.img}
                   alt={story.name}
-                  className="w-full h-48 object-cover rounded-xl mb-4"
+                  className="w-full h-48 object-fill rounded-xl mb-4"
                 />
                 <h3 className="text-xl font-semibold mb-2 text-yellow-100">
                   {story.name}
@@ -232,7 +229,7 @@ export default function HealthcarePage() {
               individual is left behind. Join hands with us as a volunteer,
               medical partner, or donor to create lasting change.
             </p>
-            <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-full text-lg font-semibold transition-all">
+            <button onClick={()=>navigate('/Partner')} className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-full text-lg font-semibold transition-all">
               Get Involved
             </button>
           </div>

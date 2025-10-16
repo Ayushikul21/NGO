@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   BookOpen,
   Users,
@@ -15,6 +16,7 @@ import {
 export default function EducationImpactPage() {
   const [isVisible, setIsVisible] = useState(false);
   const [current, setCurrent] = useState(0);
+  const navigate = useNavigate();
 
   // High-quality carousel images
   const images = [
@@ -305,7 +307,7 @@ export default function EducationImpactPage() {
           </div>
           <div className="relative">
             <Heart className="w-12 h-12 text-blue-300 mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 onClick={()=>navigate('/get-in-touch')} className="text-4xl md:text-5xl font-bold mb-4">
               Join Our Mission
             </h2>
             <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">
@@ -313,7 +315,7 @@ export default function EducationImpactPage() {
               ready to lead with knowledge and compassion. Your support fuels
               our mission to bring education to every doorstep.
             </p>
-            <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-full text-lg font-semibold transition-all hover:scale-105">
+            <button onClick={()=>navigate('/volunteer')} className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-full text-lg font-semibold transition-all hover:scale-105">
               Become a Volunteer
             </button>
           </div>

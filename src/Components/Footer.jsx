@@ -52,10 +52,38 @@ const Footer = ({ onDonateClick }) => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Programs</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-blue-400 transition-colors">Education</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition-colors">Healthcare</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition-colors">Economic Development</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition-colors">Community Building</a></li>
+              <li>
+                <button 
+                  onClick={() => navigate('/education')} 
+                  className="hover:text-blue-400 transition-colors text-left"
+                >
+                  Education
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => navigate('/healthcare')} 
+                  className="hover:text-blue-400 transition-colors text-left"
+                >
+                  Healthcare
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => navigate('/women-empowerment')} 
+                  className="hover:text-blue-400 transition-colors text-left"
+                >
+                  Women Empowerment
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => navigate('/livelihood')} 
+                  className="hover:text-blue-400 transition-colors text-left"
+                >
+                  Livelihood
+                </button>
+              </li>
             </ul>
           </div>
           
@@ -70,9 +98,30 @@ const Footer = ({ onDonateClick }) => {
                   Donate
                 </button>
               </li>
-              <li><a href="#" className="hover:text-blue-400 transition-colors">Volunteer</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition-colors">Partner with Us</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition-colors">Newsletter</a></li>
+              <li>
+                <button 
+                  onClick={() => navigate('/volunteer')} 
+                  className="hover:text-blue-400 transition-colors text-left"
+                >
+                  Volunteer
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => navigate('/Internship')} 
+                  className="hover:text-blue-400 transition-colors text-left"
+                >
+                  Internships
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => navigate('/Partner')} 
+                  className="hover:text-blue-400 transition-colors text-left"
+                >
+                  Partner With Us
+                </button>
+              </li>
             </ul>
           </div>
         </div>

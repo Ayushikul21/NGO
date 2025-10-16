@@ -20,15 +20,33 @@ export default function Header({ onDonateClick, onDocumentsClick }) {
       items: [
         {name: 'Education', path: '/education'},
         {name: 'Healthcare', path: '/healthcare'},
-        {name: 'Livelihood', path: ''},
-        {name: 'Women Empowerment', path: ''},
-        {name: 'Impact Stories', path: ''}
+        {name: 'Livelihood', path: '/livelihood'},
+        {name: 'Women Empowerment', path: '/women-empowerment'},
       ]
     },
-    { title: 'CAMPAIGNS', items: ['Current Campaigns', 'Past Campaigns', 'Success Stories', 'Join Campaign'] },
-    { title: 'GET INVOLVED', items: ['Donate', 'Volunteer', 'Partner With Us', 'Corporate Partnerships', 'Fundraise'] },
+    { title: 'CAMPAIGNS',
+      items: [
+        {name:'Current Campaigns', path: '/curr-compaign'},
+        {name:'Past Campaigns', path: '/past-compaign'},
+        {name:'Success Stories', path:'/impact-stories'}
+      ] 
+    },
+    { title: 'GET INVOLVED', 
+      items: [
+        {name: 'Volunteer', path: '/volunteer'},
+        {name: 'Internships', path: '/Internship'}, 
+        {name: 'Annual Member', path: '/annual-member'},
+        {name: 'Partner With Us', path: '/Partner'}, 
+      ] 
+    },
     { title: 'MEDIA CENTRE', items: ['Press Releases', 'News', 'Events', 'Gallery', 'Videos'] },
-    { title: 'RESOURCE CENTRE', items: ['Publications', 'Case Studies', 'Research Papers', 'Downloads'] },
+    { title: 'RESOURCE CENTRE', 
+      items: [
+        {name: 'Publications', path: '/publications'}, 
+        {name: 'Case Studies', path: '/case-studies'}, 
+        {name: 'Research Papers', path: '/research-paper'}, 
+      ] 
+    },
     { 
       title: 'CONTACT US', 
       items: [
@@ -46,7 +64,7 @@ export default function Header({ onDonateClick, onDocumentsClick }) {
       onMouseEnter={() => setActiveDropdown(index)}
       onMouseLeave={() => setActiveDropdown(null)}
     >
-      <button className="flex items-center space-x-0.1 px-1 py-2 text-gray-700 hover:text-pink-900 text-xs font-medium transition-colors">
+      <button className="flex items-center space-x-0.1 px-1 py-2 text-gray-700 hover:text-slate-900 text-xs font-medium transition-colors">
         <span>{menu.title}</span>
         <ChevronDown className="w-3 h-3" />
       </button>
@@ -57,7 +75,7 @@ export default function Header({ onDonateClick, onDocumentsClick }) {
             <Link
               key={idx}
               to={item.path || '#'}
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-900 transition-colors"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-slate-900 transition-colors"
               onClick={() => setActiveDropdown(null)}
             >
               {item.name || item}
@@ -72,7 +90,7 @@ export default function Header({ onDonateClick, onDocumentsClick }) {
     <div key={index} className="border-b border-gray-100 pb-2">
       <button
         onClick={() => setActiveDropdown(activeDropdown === index ? null : index)}
-        className="w-full flex items-center justify-between py-2 text-gray-700 hover:text-green-600 font-medium"
+        className="w-full flex items-center justify-between py-2 text-gray-700 hover:text-slate-900 font-medium"
       >
         <span className="text-sm">{menu.title}</span>
         <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === index ? 'rotate-180' : ''}`} />
@@ -83,7 +101,7 @@ export default function Header({ onDonateClick, onDocumentsClick }) {
             <Link
               key={idx}
               to={item.path || '#'}
-              className="block py-1 text-sm text-gray-600 hover:text-green-600"
+              className="block py-1 text-sm text-gray-600 hover:text-slate-900"
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.name || item}
@@ -101,7 +119,7 @@ export default function Header({ onDonateClick, onDocumentsClick }) {
           onDocumentsClick();
           if (isMobile) setMobileMenuOpen(false);
         }}
-        className={`bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-1.5 rounded-full text-xs font-semibold hover:from-pink-600 hover:to-blue-700 transition-all shadow-md hover:shadow-lg ${
+        className={`bg-gradient-to-r from-blue-500 to-slate-600 text-white px-4 py-1.5 rounded-full text-xs font-semibold hover:from-blue-600 hover:to-slate-700 transition-all shadow-md hover:shadow-lg ${
           isMobile ? 'w-full px-6 py-3 text-sm' : 'hidden sm:block'
         }`}
       >
@@ -113,7 +131,7 @@ export default function Header({ onDonateClick, onDocumentsClick }) {
           onDonateClick();
           if (isMobile) setMobileMenuOpen(false);
         }}
-        className={`bg-pink-600 text-white hover:bg-pink-700 transition-colors ${
+        className={`bg-slate-700 text-white hover:bg-slate-900 transition-colors ${
           isMobile ? 'w-full px-6 py-2 rounded-full text-center' : 'px-6 py-2 rounded-lg'
         }`}
       >
@@ -129,12 +147,12 @@ export default function Header({ onDonateClick, onDocumentsClick }) {
           {/* Logo */}
           <div onClick={()=>navigate('/')} className="flex items-center cursor-pointer">
             <div className="flex items-center space-x-2">
-              <div className="bg-gradient-to-br from-pink-600 to-purple-700 rounded-full p-1 relative">
+              <div className="bg-gradient-to-br from-blue-600 to-slate-800 rounded-full p-1 relative">
                 <img src="/logo.jpg" alt="Logo" className="h-8 w-8 rounded-full" />
               </div>
               <div className="flex flex-col">
-                <span className="text-pink-900 text-xs font-bold tracking-wider">Ankita Wellbeing</span>
-                <span className="text-pink-900 text-xs tracking-widest -mt-1">Foundation</span>
+                <span className="text-slate-900 text-xs font-bold tracking-wider">Ankita Wellbeing</span>
+                <span className="text-slate-900 text-xs tracking-widest -mt-1">Foundation</span>
               </div>
             </div>
           </div>

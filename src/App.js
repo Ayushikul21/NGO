@@ -13,6 +13,23 @@ import TeamPage from "./Components/TeamPage";
 import AnnualReportsPage from "./Components/AnnualReportsPage";
 import Education from "./Components/Education";
 import HealthcarePage from "./Components/HealthcarePage";
+import LivelihoodPage from "./Components/LivelihoodPage";
+import WomanEmpowermentPage from "./Components/WomanEmpowermentPage";
+import CurrentCampaignsPage from "./Components/CurrentCompaignPage";
+import PastCampaignPage from "./Components/PastCompaign";
+import ImpactStoriesPage from "./Components/ImpactStoriesPage";
+import Volunteer from "./Components/Volunteer";
+import Internship from "./Components/Internship";
+import PartnerWithUs from "./Components/PartnerWithUs";
+import AnnualMember from "./Components/AnnualMember";
+import PublicationsPage from "./Components/PublicationsPage";
+import CaseStudiesPage from "./Components/CaseStudiesPage";
+import ResearchPaperPage from "./Components/ResearchPaperpage";
+import CareerPage from "./Components/CareerPage";
+import FAQPage from "./Components/FAQPage";
+import ScrollToTop from "./Components/ScrollToTop";
+import AdminLoginPage from "./Components/Admin/adminlogin"; 
+import AdminDashboard from "./Components/Admin/admindashboard";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,20 +45,51 @@ function App() {
 
   return (
     <>
-      <Header onDonateClick={handleDonateClick} onDocumentsClick={handleDocumentsClick} />
+      {/* Public Routes with Header & Footer */}
       <Routes>
-        <Route path="/" element={<NGOWebsite />} />
-        <Route path="/get-in-touch" element={<GetInTouch />} />
-        <Route path="/programs" element={<Programs/>}/>
-        <Route path="/learn-more" element={<LearnMorePage/>} />
-        <Route path="/our-story" element={<OurStoryPage/>} />
-        <Route path="/mission-vision" element={<MissionVisionPage/>} />
-        <Route path="/team" element={<TeamPage/>} />
-        <Route path="/annual-reports" element={<AnnualReportsPage/>} />
-        <Route path="/education" element={<Education/>} />
-        <Route path="/healthcare" element={<HealthcarePage/>} />
+        <Route path="/admin/*" element={
+          // Admin routes without header and footer
+          <Routes>
+            <Route path="login" element={<AdminLoginPage />} />
+            <Route path="dashboard" element={<AdminDashboard />} />
+          </Routes>
+        } />
+        
+        {/* Public routes with header and footer */}
+        <Route path="*" element={
+          <>
+            <Header onDonateClick={handleDonateClick} onDocumentsClick={handleDocumentsClick} />
+            <ScrollToTop/>
+            <Routes>
+              <Route path="/" element={<NGOWebsite />} />
+              <Route path="/get-in-touch" element={<GetInTouch />} />
+              <Route path="/programs" element={<Programs/>}/>
+              <Route path="/learn-more" element={<LearnMorePage/>} />
+              <Route path="/our-story" element={<OurStoryPage/>} />
+              <Route path="/mission-vision" element={<MissionVisionPage/>} />
+              <Route path="/team" element={<TeamPage/>} />
+              <Route path="/annual-reports" element={<AnnualReportsPage/>} />
+              <Route path="/education" element={<Education/>} />
+              <Route path="/healthcare" element={<HealthcarePage/>} />
+              <Route path="/livelihood" element={<LivelihoodPage/>} />
+              <Route path="/women-empowerment" element={<WomanEmpowermentPage onDonateClick={handleDonateClick}/>} />
+              <Route path="/curr-compaign" element={<CurrentCampaignsPage onDonateClick={handleDonateClick}/>} />
+              <Route path="/past-compaign" element={<PastCampaignPage/>} />
+              <Route path="/impact-stories" element={<ImpactStoriesPage onDonateClick={handleDonateClick}/>} />
+              <Route path="/volunteer" element={<Volunteer/>} />
+              <Route path="/Internship" element={<Internship/>} />
+              <Route path="/Partner" element={<PartnerWithUs/>} />
+              <Route path="/annual-member" element={<AnnualMember/>} />
+              <Route path="/publications" element={<PublicationsPage/>} />
+              <Route path="/case-studies" element={<CaseStudiesPage onDonateClick={handleDonateClick}/>} />
+              <Route path="/research-paper" element={<ResearchPaperPage/>} />
+              <Route path="/career" element={<CareerPage/>} />
+              <Route path="/FAQ" element={<FAQPage onDonateClick={handleDonateClick}/>} />
+            </Routes>
+            <Footer onDonateClick={handleDonateClick} />
+          </>
+        } />
       </Routes>
-      <Footer onDonateClick={handleDonateClick} />
 
       {/* Donate Modal */}
       {isDonate && (
@@ -209,7 +257,7 @@ function App() {
             <div className="mt-6 flex justify-end">
               <button
                 onClick={() => setIsOpen(false)}
-                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded"
               >
                 Close
               </button>
@@ -218,6 +266,7 @@ function App() {
         </div>
       )}
     </>
+    
   );
 }
 

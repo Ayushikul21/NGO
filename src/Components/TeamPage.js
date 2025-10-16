@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Users, Award, Heart, Target, Linkedin, Mail, ChevronLeft, ChevronRight, Quote, Briefcase, GraduationCap, MapPin } from 'lucide-react';
+import { Users, Award, Heart, Target, ChevronLeft, ChevronRight, Quote, Briefcase, GraduationCap, MapPin } from 'lucide-react';
 
 export default function TeamPage() {
   const [isVisible, setIsVisible] = useState(false);
